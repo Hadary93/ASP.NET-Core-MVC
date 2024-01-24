@@ -20,8 +20,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Hadary/Personal/GermanLearning/GermanLearning/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Hadary/Personal/GermanLearning/GermanLearning/Views/Home/Sentences.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZW50ZW5jZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Hadary/Personal/GermanLearning/GermanLearning/Views/Sentences/Book.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VudGVuY2VzXEJvb2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Hadary/Personal/GermanLearning/GermanLearning/Views/Sentences/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VudGVuY2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Hadary/Personal/GermanLearning/GermanLearning/Views/Shared/Error.cshtml]

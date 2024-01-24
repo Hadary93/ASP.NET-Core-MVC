@@ -18,7 +18,7 @@ namespace GermanLearning.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Sentences()
         {
             return View();
         }

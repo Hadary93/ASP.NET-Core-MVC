@@ -1,0 +1,23 @@
+﻿@model IEnumerable<IGrouping<string, Sentence>>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To All Sentences</h1>
+</div>
+
+<table style="width:100%">
+    <tbody>
+        @foreach (var obj in Model)
+        {
+                <tr>
+                    <td width = "50%">
+                           <div  role="group">
+                                        <a asp-controller="Sentences" asp-action="Book" asp-route-bookName="@obj.Key"> @obj.Key</a>
+                           </div>
+                   </td>
+                </tr>
+        }
+    </tbody>
+</table>

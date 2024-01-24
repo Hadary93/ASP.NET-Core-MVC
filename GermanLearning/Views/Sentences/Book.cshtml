@@ -1,0 +1,198 @@
+﻿@model Sentence
+
+ <style>
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: white;
+        }
+
+        /* Add additional styles for different colors as needed */
+        .yes {
+            background-color: green;
+        }
+
+        .no {
+            background-color: red;
+        }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Book</h1>
+<div id="circle" class="circle @Model.Practiced"></div>
+
+<!-- Table structure -->
+<table>
+    <tbody class="mx-auto">
+         <tr id="words" height="100" >
+                @foreach (var obj in Model.GermanText.Split(" ").OrderBy(x => x.Length))
+                {
+                 <td>
+                        <button type="button" id="@obj" onclick="updateHtmlContent('@obj','@Model.GermanText')">@obj</button>
+                 </td>
+                }
+
+            </tr>
+        <!-- Ensure the <tr> has the id attribute -->
+        <tr id="answer"  id="words" height="100"></tr>
+    </tbody>
+</table>
+
+
+<!-- Table structure -->
+<table>
+    <tbody>
+        <tr id="answer"></tr>
+    </tbody>
+</table>
+    
+    <p font-weight="bold" font-size="16">@Model.EnglishTranslation</p>
+
+    <p id="germanText" hidden>@Model.GermanText</p>
+</div>
+
+
+<div>
+    <a asp-controller="Sentences" asp-action="Previous" asp-route-sentenceID="@Model.Id" >Previous</a>
+    <a asp-controller="Sentences" asp-action="Next" asp-route-sentenceID="@Model.Id">Next</a>
+</div>
+
+<script>
+    function updateHtmlContent(word,germanSentence) {
+
+       let color = EvaluateAnswer(word);
+
+        // Update the HTML content in the answer row
+       const answerRow = document.getElementById("answer");
+       const wordsRow = document.getElementById("words");
+
+       // Create a button element
+       const button = document.createElement("button");
+       button.textContent = word; // Set the text content of the button
+       button.style.color = color;
+
+       // Add an event listener or any other attributes to the button if needed
+       button.addEventListener("click", buttonClickHandler);
+       
+       // Create a table cell (<td>) to hold the button
+       const cell = document.createElement("td");
+       
+       // Append the button to the cell
+       cell.appendChild(button);
+       
+       // Append the cell to the row
+       answerRow.appendChild(cell);
+
+       wordsRow.removeChild(document.getElementById(word).parentNode)
+
+    }
+
+    // Define the event listener function
+    function buttonClickHandler() {
+       let color = EvaluateAnswer(this.textContent);
+
+       const answerRow = document.getElementById("answer");
+       const wordsRow = document.getElementById("words");
+
+
+       // Create a button element
+       const button = document.createElement("button");
+       button.textContent = this.textContent; // Set the text content of the button
+       
+       
+
+       // Add an event listener or any other attributes to the button if needed
+       button.addEventListener("click", buttonClickHandler);
+
+       // Create a table cell (<td>) to hold the button
+       const cell = document.createElement("td");
+
+       // Append the button to the cell
+       cell.appendChild(button);
+
+     
+
+       if (this.parentNode.parentNode === answerRow) {
+            // Append the cell to the row
+            wordsRow.appendChild(cell);
+
+            answerRow.removeChild(this.parentNode)
+       } else {
+
+            button.style.color = color;
+            // Append the cell to the row
+            answerRow.appendChild(cell);
+
+            wordsRow.removeChild(this.parentNode)
+       } 
+      
+    }
+
+    function EvaluateAnswer(selectedWord){
+
+        const answerButtons = document.getElementById("answer").querySelectorAll("button");
+
+        let result = ""
+
+        // Iterate through each button element
+        answerButtons.forEach(button => {
+        // Perform some action for each button
+            result = result +  button.innerText.trim() + " "
+        });
+
+        const germanText = document.getElementById("germanText").innerText.trim();
+        
+        var answerBit = result + selectedWord;
+        var germanBit = germanText.substring(0,answerBit.length);
+        
+        if(answerBit === germanBit){
+
+             if(germanText === answerBit){
+
+                // Make an AJAX request to update the database
+                $.ajax({
+                type: "POST",  // Use POST or another HTTP method based on your requirements
+                url: "/Sentences/UpdateDatabase",  // Replace with the actual URL of your server-side action method
+                data: {
+                    id: @Model.Id,
+                    practiced: "yes"
+                },
+                success: function (response) {
+                    console.log("Database updated successfully");
+                },
+                error: function (error) {
+                    console.error("Error updating database:", error);
+                }
+                });
+
+                console.log("hello")
+            }
+
+            return "green"
+        }
+        
+       
+        return "red"
+    }
+
+    function updateCircleClass() {
+            // Make an AJAX request to get the updated practiced value from the server
+            fetch('/Sentences/GetPracticedValue?id=@Model.Id')
+                .then(response => response.json())
+                .then(data => {
+                    const circle = document.getElementById('circle');
+                    circle.className = 'circle ' + data.practicedValue;
+                })
+                .catch(error => {
+                    console.error('Error updating circle:', error);
+                });
+        }
+
+        // Update the circle every 5 seconds (adjust the interval as needed)
+        setInterval(updateCircleClass, 1000);
+</script>
