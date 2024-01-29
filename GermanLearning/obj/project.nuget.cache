@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "U4OJSpSaGoGd8v1PyQ/WDBTSwPRYDTheXX7h2cwo9uUhqS8iPLeSv0Ylm3pI58eAaDYD7Wy/mdOEleUtcPbgcQ==",
+  "dgSpecHash": "ylYw3K3RUwJUVXq5syDDbSwFzR6IEX6XwIcBktuGdjFisH4z/mI1BM3zjrfANJhmk4I/oCZvJj2HWIOU5NqaJw==",
   "success": true,
   "projectFilePath": "C:\\Hadary\\Personal\\GermanLearning\\GermanLearning\\GermanLearning.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "C:\\Users\\Khaled Elhadary\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Khaled Elhadary\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Khaled Elhadary\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Khaled Elhadary\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Khaled Elhadary\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Khaled Elhadary\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\Khaled Elhadary\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",

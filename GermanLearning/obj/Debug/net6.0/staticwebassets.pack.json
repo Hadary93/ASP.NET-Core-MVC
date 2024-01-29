@@ -5,12 +5,28 @@
       "PackagePath": "staticwebassets\\GermanLearning.bundle.scp.css"
     },
     {
+      "Id": "C:\\Hadary\\Personal\\GermanLearning\\GermanLearning\\wwwroot\\css\\LetraBootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\LetraBootstrap.min.css"
+    },
+    {
       "Id": "C:\\Hadary\\Personal\\GermanLearning\\GermanLearning\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Hadary\\Personal\\GermanLearning\\GermanLearning\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Hadary\\Personal\\GermanLearning\\GermanLearning\\wwwroot\\js\\Book.js",
+      "PackagePath": "staticwebassets\\js\\Book.js"
+    },
+    {
+      "Id": "C:\\Hadary\\Personal\\GermanLearning\\GermanLearning\\wwwroot\\js\\Book\\Answer.js",
+      "PackagePath": "staticwebassets\\js\\Book\\Answer.js"
+    },
+    {
+      "Id": "C:\\Hadary\\Personal\\GermanLearning\\GermanLearning\\wwwroot\\js\\Book\\Pagination.js",
+      "PackagePath": "staticwebassets\\js\\Book\\Pagination.js"
     },
     {
       "Id": "C:\\Hadary\\Personal\\GermanLearning\\GermanLearning\\wwwroot\\js\\site.js",

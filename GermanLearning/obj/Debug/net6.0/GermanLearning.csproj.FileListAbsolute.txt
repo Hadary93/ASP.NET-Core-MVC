@@ -66,3 +66,4 @@ C:\Hadary\Personal\GermanLearning\GermanLearning\bin\Debug\net6.0\runtimes\win\l
 C:\Hadary\Personal\GermanLearning\GermanLearning\obj\Debug\net6.0\GermanLearning.csproj.CopyComplete
 C:\Hadary\Personal\GermanLearning\GermanLearning\bin\Debug\net6.0\Humanizer.dll
 C:\Hadary\Personal\GermanLearning\GermanLearning\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Hadary\Personal\GermanLearning\GermanLearning\bin\Debug\net6.0\Newtonsoft.Json.dll

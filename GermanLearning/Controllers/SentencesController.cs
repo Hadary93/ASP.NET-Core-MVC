@@ -43,8 +43,6 @@ namespace GermanLearning.Controllers
             {
                 return View("Book", _db.Sentences.FirstOrDefault(x => x.Id == sentenceID));
             }
-
-            
         }
 
         public IActionResult Previous(int sentenceID)
@@ -87,5 +85,19 @@ namespace GermanLearning.Controllers
             return Json(new { practicedValue = practiced });
         }
 
+        public IActionResult SaveGermanText(int id,string germanText)
+        {
+            // Perform any logic to get the updated 'practiced' value and class
+            var sentence = _db.Sentences.FirstOrDefault(x => x.Id.Equals(id));
+
+            if (sentence!=null)
+            {
+                sentence.GermanText = germanText;
+            }
+
+            _db.SaveChanges();
+
+            return View("Book", sentence);
+        }
     }
 }
